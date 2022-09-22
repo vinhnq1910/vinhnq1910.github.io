@@ -389,11 +389,11 @@ body {
 }
 
 .column img {
-  filter: grayscale(50%);
-  -webkit-filter: grayscale(50%);
-  -moz-filter: grayscale(50%);
-  -ms-filter: grayscale(50%);
-  -o-filter: grayscale(50%);
+  filter: grayscale(25%);
+  -webkit-filter: grayscale(25%);
+  -moz-filter: grayscale(25%);
+  -ms-filter: grayscale(25%);
+  -o-filter: grayscale(25%);
 }
 
 
