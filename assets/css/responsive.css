@@ -1,0 +1,31 @@
+/* Responsive layout for PC/Laptop */
+@media (min-width: 64em) {
+  .column {
+    flex: 20%;
+    max-width: 20%;
+  }
+}
+
+/* Responsive layout for tablet */
+@media (min-width:  46.25em) and (max-width: 63.9375em) {
+  .column {
+    flex: 20%;
+    max-width: 20%;
+  }
+
+  .header__nav, .header__right {
+    display: none;
+  }
+}
+  
+/* Responsive layout for mobile */
+@media (max-width: 46.1875em) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+  
+  .header__nav, .header__right {
+    display: none;
+  }
+}
