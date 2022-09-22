@@ -110,6 +110,11 @@ body {
   transition: all .5s;
 }
 
+.slider {
+  margin-top: 80px;
+  background-color: aquamarine;
+}
+
 /* Begin CSS slider */
 
 /* *,
