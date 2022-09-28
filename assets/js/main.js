@@ -1,50 +1,134 @@
-(function () {
-  var $slides = document.querySelectorAll('.slide');
-  var $controls = document.querySelectorAll('.slider__control');
-  var numOfSlides = $slides.length;
-  var slidingAT = 1300; // sync this with scss variable
-  var slidingBlocked = false;
-  var nextSlide = document.querySelector('.slider__control--right');
-  setInterval(() => { nextSlide.click() }, 5000);
-  [].slice.call($slides).forEach(function ($el, index) {
-    var i = index + 1;
-    $el.classList.add('slide-' + i);
-    $el.dataset.slide = i;
-  });
+var curpage = 1;
+var sliding = false;
+var click = true;
+var left = document.getElementById("left");
+var right = document.getElementById("right");
+var pagePrefix = "slide";
+var pageShift = 500;
+var transitionPrefix = "circle";
+var svg = true;
 
-  [].slice.call($controls).forEach(function ($el) {
-    $el.addEventListener('click', controlClickHandler);
-  });
+function leftSlide() {
+	if (click) {
+		if (curpage == 1) curpage = 5;
+		console.log("woek");
+		sliding = true;
+		curpage--;
+		svg = true;
+		click = false;
+		for (k = 1; k <= 4; k++) {
+			var a1 = document.getElementById(pagePrefix + k);
+			a1.className += " tran";
+		}
+		setTimeout(() => {
+			move();
+		}, 200);
+		setTimeout(() => {
+			for (k = 1; k <= 4; k++) {
+				var a1 = document.getElementById(pagePrefix + k);
+				a1.classList.remove("tran");
+			}
+		}, 1400);
+	}
+}
 
-  function controlClickHandler() {
-    if (slidingBlocked) return;
-    slidingBlocked = true;
+function rightSlide() {
+	if (click) {
+		if (curpage == 4) curpage = 0;
+		console.log("woek");
+		sliding = true;
+		curpage++;
+		svg = false;
+		click = false;
+		for (k = 1; k <= 4; k++) {
+			var a1 = document.getElementById(pagePrefix + k);
+			a1.className += " tran";
+		}
+		setTimeout(() => {
+			move();
+		}, 200);
+		setTimeout(() => {
+			for (k = 1; k <= 4; k++) {
+				var a1 = document.getElementById(pagePrefix + k);
+				a1.classList.remove("tran");
+			}
+		}, 1400);
+	}
+}
 
-    var $control = this;
-    var isRight = $control.classList.contains('m--right');
-    var $curActive = document.querySelector('.slide.s--active');
-    var index = +$curActive.dataset.slide;
-    (isRight) ? index++ : index--;
-    if (index < 1) index = numOfSlides;
-    if (index > numOfSlides) index = 1;
-    var $newActive = document.querySelector('.slide-' + index);
+function move() {
+	if (sliding) {
+		sliding = false;
+		if (svg) {
+			for (j = 1; j <= 9; j++) {
+				var c = document.getElementById(transitionPrefix + j);
+				c.classList.remove("steap");
+				c.setAttribute("class", transitionPrefix + j + " streak");
+				console.log("streak");
+			}
+		} else {
+			for (j = 10; j <= 18; j++) {
+				var c = document.getElementById(transitionPrefix + j);
+				c.classList.remove("steap");
+				c.setAttribute("class", transitionPrefix + j + " streak");
+				console.log("streak");
+			}
+		}
+		setTimeout(() => {
+			for (i = 1; i <= 4; i++) {
+				if (i == curpage) {
+					var a = document.getElementById(pagePrefix + i);
+					a.className += " up1";
+				} else {
+					var b = document.getElementById(pagePrefix + i);
+					b.classList.remove("up1");
+				}
+			}
+			sliding = true;
+		}, 600);
+		setTimeout(() => {
+			click = true;
+		}, 1700);
 
-    $control.classList.add('a--rotation');
-    $curActive.classList.remove('s--active', 's--active-prev');
-    document.querySelector('.slide.s--prev').classList.remove('s--prev');
+		setTimeout(() => {
+			if (svg) {
+				for (j = 1; j <= 9; j++) {
+					var c = document.getElementById(transitionPrefix + j);
+					c.classList.remove("streak");
+					c.setAttribute("class", transitionPrefix + j + " steap");
+				}
+			} else {
+				for (j = 10; j <= 18; j++) {
+					var c = document.getElementById(transitionPrefix + j);
+					c.classList.remove("streak");
+					c.setAttribute("class", transitionPrefix + j + " steap");
+				}
+				sliding = true;
+			}
+		}, 850);
+		setTimeout(() => {
+			click = true;
+		}, 1700);
+	}
+}
 
-    $newActive.classList.add('s--active');
-    if (!isRight) $newActive.classList.add('s--active-prev');
+left.onmousedown = () => {
+	leftSlide();
+};
 
+right.onmousedown = () => {
+	rightSlide();
+};
 
-    var prevIndex = index - 1;
-    if (prevIndex < 1) prevIndex = numOfSlides;
+document.onkeydown = e => {
+	if (e.keyCode == 37) {
+		leftSlide();
+	} else if (e.keyCode == 39) {
+		rightSlide();
+	}
+};
 
-    document.querySelector('.slide-' + prevIndex).classList.add('s--prev');
-
-    setTimeout(function () {
-      $control.classList.remove('a--rotation');
-      slidingBlocked = false;
-    }, slidingAT * 0.75);
-  };
-}());
+//for codepen header
+// setTimeout(() => {
+// 	rightSlide();
+// }, 500);
