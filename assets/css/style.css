@@ -186,7 +186,7 @@ circle {
 
 .right {
   margin-left: 628px;
-  margin-top: 168px;
+  margin-top: 130px;
   border: 1px solid #849494;
   background-color: transparent;
   transition: 0.5s;
@@ -198,7 +198,7 @@ circle {
 
 .left {
   margin-left: 0.5%;
-  margin-top: 168px;
+  margin-top: 130px;
   border: 1px solid #849494;
   background-color: transparent;
   transition: 0.5s;
