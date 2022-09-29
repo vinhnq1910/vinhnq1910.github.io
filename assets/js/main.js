@@ -60,14 +60,14 @@ function move() {
 	if (sliding) {
 		sliding = false;
 		if (svg) {
-			for (j = 1; j <= 9; j++) {
+			for (j = 1; j <= 15; j++) {
 				var c = document.getElementById(transitionPrefix + j);
 				c.classList.remove("steap");
 				c.setAttribute("class", transitionPrefix + j + " streak");
 				console.log("streak");
 			}
 		} else {
-			for (j = 10; j <= 18; j++) {
+			for (j = 16; j <= 30; j++) {
 				var c = document.getElementById(transitionPrefix + j);
 				c.classList.remove("steap");
 				c.setAttribute("class", transitionPrefix + j + " streak");
@@ -92,13 +92,13 @@ function move() {
 
 		setTimeout(() => {
 			if (svg) {
-				for (j = 1; j <= 9; j++) {
+				for (j = 1; j <= 15; j++) {
 					var c = document.getElementById(transitionPrefix + j);
 					c.classList.remove("streak");
 					c.setAttribute("class", transitionPrefix + j + " steap");
 				}
 			} else {
-				for (j = 10; j <= 18; j++) {
+				for (j = 16; j <= 30; j++) {
 					var c = document.getElementById(transitionPrefix + j);
 					c.classList.remove("streak");
 					c.setAttribute("class", transitionPrefix + j + " steap");

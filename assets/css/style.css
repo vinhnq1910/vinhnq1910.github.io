@@ -125,7 +125,7 @@ body {
   top: 10px;
   left: 0;
   right: 0;
-  margin: auto auto;
+  margin: 0 auto;
   overflow: hidden;
   position: absolute;
 }
@@ -156,8 +156,7 @@ button:focus {
 circle {
   stroke: #fff;
   fill: none;
-  transition: 0.3s;
-  opacity: .2;
+  transition: 0.2s;
 }
 
 #svg1 circle {
@@ -192,6 +191,7 @@ circle {
 
 .right:hover {
   background-color: #fff;
+  opacity: 0.6;
 }
 
 .left {
@@ -204,6 +204,7 @@ circle {
 
 .left:hover {
   background-color: #fff;
+  opacity: 0.6;
 }
 
 .circle1 {
@@ -243,47 +244,96 @@ circle {
 }
 
 .circle10 {
-  transition-delay: 0.05s;
+  transition-delay: 0.5s;
 }
 
 .circle11 {
-  transition-delay: 0.1s;
+  transition-delay: 0.55s;
 }
 
 .circle12 {
-  transition-delay: 0.15s;
+  transition-delay: 0.6s;
 }
 
 .circle13 {
-  transition-delay: 0.2s;
+  transition-delay: 0.65s;
 }
 
 .circle14 {
-  transition-delay: 0.25s;
+  transition-delay: 0.7s;
 }
 
 .circle15 {
-  transition-delay: 0.3s;
+  transition-delay: 0.75s;
 }
 
 .circle16 {
-  transition-delay: 0.35s;
+  transition-delay: 0.05s;
 }
 
 .circle17 {
-  transition-delay: 0.4s;
+  transition-delay: 0.1s;
 }
 
 .circle18 {
+  transition-delay: 0.15s;
+}
+
+.circle19 {
+  transition-delay: 0.2s;
+}
+
+.circle20 {
+  transition-delay: 0.25s;
+}
+
+.circle21 {
+  transition-delay: 0.3s;
+}
+
+.circle22 {
+  transition-delay: 0.35s;
+}
+
+.circle23 {
+  transition-delay: 0.4s;
+}
+
+.circle24 {
   transition-delay: 0.45s;
 }
 
+.circle25 {
+  transition-delay: 0.5s;
+}
+
+.circle26 {
+  transition-delay: 0.55s;
+}
+
+.circle27 {
+  transition-delay: 0.6s;
+}
+
+.circle28 {
+  transition-delay: 0.65s;
+}
+
+.circle29 {
+  transition-delay: 0.7s;
+}
+
+.circle30 {
+  transition-delay: 0.75s;
+}
+
+
 .slide1 {
-  background-image: url("../img/04.jpg");
+  background-image: url("../img/01.jpg");
 }
 
 .slide2 {
-  background-image: url("../img/canhquan.jpg");
+  background-image: url("../img/02.jpg");
 
 }
 
@@ -293,7 +343,7 @@ circle {
 }
 
 .slide4 {
-  background-image: url("../img/sanvuon1.jpg");
+  background-image: url("../img/08.jpg");
 
 }
 
