@@ -154,9 +154,10 @@ button:focus {
 }
 
 circle {
-  /* stroke: #fff; */
+  stroke: #fff;
   fill: none;
   transition: 0.3s;
+  opacity: .2;
 }
 
 #svg1 circle {
@@ -182,7 +183,7 @@ circle {
 }
 
 .right {
-  margin-left: 964px;
+  margin-left: 960px;
   margin-top: 262px;
   border: 1px solid #849494;
   background-color: transparent;
