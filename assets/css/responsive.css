@@ -4,6 +4,10 @@
     flex: 20%;
     max-width: 20%;
   }
+
+  .mobile__menu-btn {
+    display: none;
+  }
 }
 
 /* Responsive layout for tablet */
@@ -16,6 +20,11 @@
   .header__nav, .header__right {
     display: none;
   }
+
+  .flexslider {
+    width: 100%;
+  }
+  
 }
   
 /* Responsive layout for mobile */
@@ -23,6 +32,19 @@
   .column {
     flex: 100%;
     max-width: 100%;
+  }
+
+  .flexslider {
+    width: 100%;
+  }
+
+  #footer a {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2.2;
+    padding: 08px 08px;
+    color: #ccc;
+    font-size: 08px;
   }
   
   .header__nav, .header__right {
